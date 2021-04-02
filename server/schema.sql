@@ -54,6 +54,8 @@ CREATE TABLE IF NOT EXISTS `patterns` (
   `flavor` enum('pcre','js') CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT 'js',
   `numPositiveVotes` int(10) NOT NULL DEFAULT '0',
   `numNegativeVotes` int(10) NOT NULL DEFAULT '0',
+  `mode` varchar(32) NOT NULL,
+  `tests` json DEFAULT '[]',
   PRIMARY KEY (`id`),
   KEY `userPatterns` (`id`,`owner`),
   KEY `patternStats` (`visibility`,`flavor`),
